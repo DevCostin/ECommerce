@@ -1,13 +1,31 @@
 package net.devcostin.code;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class ECommerceApplicationTests {
+class ECommerceApplicationUnitaryTests {
 
 	@Test
-	void contextLoads() {
+	void shouldSearchProductPriceFirstCase() {
+		
 	}
-
+	
+	@Test
+	void shouldSearchProductPriceSecondCase() {
+		
+	}
+	
+	@Test
+	void shouldSearchProductPriceThirdCase() {
+		
+	}
+	
+	@Test
+	void shouldSearchProductPriceFourthCase() {
+		
+	}
+	
+	@Test
+	void shouldSearchProductPriceFifthCase() {
+		
+	}
 }
