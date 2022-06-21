@@ -1,8 +1,11 @@
 package net.devcostin.code.aplication.searchProductPrice;
 
+import org.springframework.stereotype.Service;
+
 import net.devcostin.code.domain.models.Price;
 import net.devcostin.code.domain.services.PriceService;
 
+@Service
 public class SearchProductPriceUseCase {
 
 	public PriceService service;
@@ -24,5 +27,4 @@ public class SearchProductPriceUseCase {
 
 		return response;
 	}
-	
 }

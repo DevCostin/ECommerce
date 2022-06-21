@@ -5,9 +5,12 @@ import java.util.Comparator;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import net.devcostin.code.domain.models.Price;
 import net.devcostin.code.domain.repositories.PriceRepository;
 
+@Service
 public class PriceService {
 
 	public PriceRepository repository;

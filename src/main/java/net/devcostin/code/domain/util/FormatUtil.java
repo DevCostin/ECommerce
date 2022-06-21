@@ -11,6 +11,11 @@ public class FormatUtil{
 		return date.format(formatter).toString();
 	}
 	
+	public static LocalDateTime formatStringToDate(String date) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss"); 
+		return LocalDateTime.parse(date, formatter);
+	}
+	
 	public static String formatDouble(double number) {	
 		DecimalFormat df = new DecimalFormat("#.00");
 		return df.format(number);
