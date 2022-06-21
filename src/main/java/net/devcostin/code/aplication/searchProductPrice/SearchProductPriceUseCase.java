@@ -1,26 +1,28 @@
 package net.devcostin.code.aplication.searchProductPrice;
 
-import java.time.LocalDateTime;
+import net.devcostin.code.domain.models.Price;
+import net.devcostin.code.domain.services.PriceService;
 
 public class SearchProductPriceUseCase {
 
-	public SearchProductPriceResponse execute(SearchProductPriceRequest request) {
-
-		SearchProductPriceResponse response = SearchProductPriceResponse.builder()
-				.productId(35455)
-				.brandId(1)
-				.finalPrice("35.50EUR").build();
-
-		if(request.getDate().getHour()==16) {
-			response.price_list = 2;
-			response.date = LocalDateTime.of(2020, 6, 14, 16, 0, 0);
-			response.finalPrice = "25.45EUR";
-		}else {
-			response.price_list = 1;
-			response.date = LocalDateTime.of(2020, 6, 14, 10, 0, 0);
-			response.finalPrice = "35.50EUR";
-		}
-
-		return response; 
+	public PriceService service;
+	
+	public SearchProductPriceUseCase(PriceService service) {
+		this.service = service;
 	}
+	
+	public SearchProductPriceResponse execute(SearchProductPriceRequest request) {
+		
+		Price price = service.searchPrice(request.date, request.productId, request.brandId);
+		
+		SearchProductPriceResponse response = SearchProductPriceResponse.builder()
+				.productId(price.productId)
+				.brandId(price.brandId)
+				.price_list(price.priceList)
+				.date(request.date)
+				.finalPrice(price.getTotalPrice()).build();
+
+		return response;
+	}
+	
 }
