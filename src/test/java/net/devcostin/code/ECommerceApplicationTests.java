@@ -3,6 +3,7 @@ package net.devcostin.code;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,8 +19,13 @@ class ECommerceApplicationUnitaryTests {
 	void shouldSearchProductPriceFirstCase() {
 		// time:10:00 , day:14, product:35455, brand:1
 		SearchProductPriceUseCase useCase = new SearchProductPriceUseCase();
-		
-		SearchProductPriceResponse response = useCase.execute(SearchProductPriceRequest.builder().build());		
+		SearchProductPriceResponse response = useCase.execute(
+				SearchProductPriceRequest.builder()
+				.date(LocalDateTime.of(2020, 6, 14, 10, 0, 0))
+				.productId(35455)
+				.brandId(1)
+				.build()
+				);		
 		
 		assertThat(response.productId, equalTo(35455));
 		assertThat(response.brandId, equalTo(1));
