@@ -67,6 +67,66 @@ class ECommerceApplicationUnitaryTests {
 		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-14-16.00.00"));
 		assertThat(response.getFinalPrice(), equalTo("25,45EUR"));
 	}
+	
+	@Test
+	void shouldSearchProductPriceThirdCase() {
+		// time:21:00 , day:14, product:35455, brand:1
+		Mockito.when(repository.findAll()).thenReturn(getAllPrices());
+		
+		SearchProductPriceResponse response = useCase.execute(
+				SearchProductPriceRequest.builder()
+				.date(LocalDateTime.of(2020, 6, 14, 21, 0, 0))
+				.productId(35455)
+				.brandId(1)
+				.build()
+				);		
+
+		assertThat(response.productId, equalTo(35455));
+		assertThat(response.brandId, equalTo(1));
+		assertThat(response.getPrice_list(), equalTo(1));
+		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-14-21.00.00"));
+		assertThat(response.getFinalPrice(), equalTo("35,50EUR"));
+	}
+	
+	@Test
+	void shouldSearchProductPriceFourthCase() {
+		// time:10:00 , day:15, product:35455, brand:1
+		Mockito.when(repository.findAll()).thenReturn(getAllPrices());
+		
+		SearchProductPriceResponse response = useCase.execute(
+				SearchProductPriceRequest.builder()
+				.date(LocalDateTime.of(2020, 6, 15, 10, 0, 0))
+				.productId(35455)
+				.brandId(1)
+				.build()
+				);		
+
+		assertThat(response.productId, equalTo(35455));
+		assertThat(response.brandId, equalTo(1));
+		assertThat(response.getPrice_list(), equalTo(3));
+		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-15-10.00.00"));
+		assertThat(response.getFinalPrice(), equalTo("30,50EUR"));
+	}
+	
+	@Test
+	void shouldSearchProductPriceFifthCase() {
+		// time:21:00 , day:16, product:35455, brand:1
+		Mockito.when(repository.findAll()).thenReturn(getAllPrices());
+		
+		SearchProductPriceResponse response = useCase.execute(
+				SearchProductPriceRequest.builder()
+				.date(LocalDateTime.of(2020, 6, 16, 21, 0, 0))
+				.productId(35455)
+				.brandId(1)
+				.build()
+				);		
+
+		assertThat(response.productId, equalTo(35455));
+		assertThat(response.brandId, equalTo(1));
+		assertThat(response.getPrice_list(), equalTo(4));
+		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-16-21.00.00"));
+		assertThat(response.getFinalPrice(), equalTo("25,45EUR"));
+	}
 
 	private List<Price> getAllPrices() {
 		
