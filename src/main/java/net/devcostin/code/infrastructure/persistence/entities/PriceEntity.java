@@ -1,4 +1,4 @@
-package net.devcostin.code.infrastructure.persistence.Entities;
+package net.devcostin.code.infrastructure.persistence.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "PRICES")
+@Table(name = "prices")
 public class PriceEntity {
 	
 	@Id
@@ -32,6 +32,10 @@ public class PriceEntity {
 	public int priority;
 	@Column(name = "PRICE")
 	public double price;
-	@Column(name = "CURRENCY")
+	@Column(name = "CURR")
 	public String currency;	
+	@Column(name = "LAST_UPDATE")
+	public String lastUpdate;
+	@Column(name = "LAST_UPDATE_BY")
+	public String lastUpdateBy;
 }

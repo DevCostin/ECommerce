@@ -123,7 +123,7 @@ class ECommerceApplicationUnitaryTests {
 		assertThat(response.brandId, equalTo(1));
 		assertThat(response.getPrice_list(), equalTo(4));
 		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-16-21.00.00"));
-		assertThat(response.getFinalPrice(), equalTo("25,45EUR"));
+		assertThat(response.getFinalPrice(), equalTo("38,95EUR"));
 	}
 
 	private List<Price> getAllPrices() {
@@ -148,7 +148,7 @@ class ECommerceApplicationUnitaryTests {
 				Price.builder().brandId(1)
 				.startDate(LocalDateTime.of(2020, 6, 15, 16, 0, 0))
 				.endDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59))
-				.priceList(4).productId(35455).priority(1).price(25.45).currency("EUR").build()
+				.priceList(4).productId(35455).priority(1).price(38.95).currency("EUR").build()
 				));
 	}
 
