@@ -19,6 +19,6 @@ public class Price {
 	public String currency;	
 	
 	public String getTotalPrice() {
-		return FormatUtil.formatDouble(price)+currency;
+		return FormatUtil.doubleToStringTwoDecimals(price)+currency;
 	}
 }

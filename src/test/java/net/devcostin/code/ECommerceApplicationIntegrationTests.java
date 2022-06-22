@@ -30,7 +30,7 @@ class ECommerceApplicationIntegrationTests {
 		assertThat(response.getBody().brandId, equalTo(1));
 		assertThat(response.getBody().getPrice_list(), equalTo(1));
 		assertThat( FormatUtil.formatDateToString(response.getBody().date), equalTo("2020-06-14-10.00.00"));
-		assertThat(response.getBody().getFinalPrice(), equalTo("35,50EUR"));
+		assertThat(response.getBody().getFinalPrice(), equalTo("35.50EUR"));
 		
 		assertTrue(response.getStatusCode().is2xxSuccessful());
 	}
@@ -44,7 +44,7 @@ class ECommerceApplicationIntegrationTests {
 		assertThat(response.getBody().brandId, equalTo(1));
 		assertThat(response.getBody().getPrice_list(), equalTo(2));
 		assertThat( FormatUtil.formatDateToString(response.getBody().date), equalTo("2020-06-14-16.00.00"));
-		assertThat(response.getBody().getFinalPrice(), equalTo("25,45EUR"));
+		assertThat(response.getBody().getFinalPrice(), equalTo("25.45EUR"));
 		
 		assertTrue(response.getStatusCode().is2xxSuccessful());
 	}
@@ -58,7 +58,7 @@ class ECommerceApplicationIntegrationTests {
 		assertThat(response.getBody().brandId, equalTo(1));
 		assertThat(response.getBody().getPrice_list(), equalTo(1));
 		assertThat( FormatUtil.formatDateToString(response.getBody().date), equalTo("2020-06-14-21.00.00"));
-		assertThat(response.getBody().getFinalPrice(), equalTo("35,50EUR"));
+		assertThat(response.getBody().getFinalPrice(), equalTo("35.50EUR"));
 		
 		assertTrue(response.getStatusCode().is2xxSuccessful());
 	}
@@ -72,7 +72,7 @@ class ECommerceApplicationIntegrationTests {
 		assertThat(response.getBody().brandId, equalTo(1));
 		assertThat(response.getBody().getPrice_list(), equalTo(3));
 		assertThat( FormatUtil.formatDateToString(response.getBody().date), equalTo("2020-06-15-10.00.00"));
-		assertThat(response.getBody().getFinalPrice(), equalTo("30,50EUR"));
+		assertThat(response.getBody().getFinalPrice(), equalTo("30.50EUR"));
 		
 		assertTrue(response.getStatusCode().is2xxSuccessful());
 	}
@@ -86,7 +86,7 @@ class ECommerceApplicationIntegrationTests {
 		assertThat(response.getBody().brandId, equalTo(1));
 		assertThat(response.getBody().getPrice_list(), equalTo(4));
 		assertThat( FormatUtil.formatDateToString(response.getBody().date), equalTo("2020-06-16-21.00.00"));
-		assertThat(response.getBody().getFinalPrice(), equalTo("38,95EUR"));
+		assertThat(response.getBody().getFinalPrice(), equalTo("38.95EUR"));
 		
 		assertTrue(response.getStatusCode().is2xxSuccessful());
 	}

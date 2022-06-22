@@ -1,8 +1,10 @@
 package net.devcostin.code.domain.util;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class FormatUtil{
 	
@@ -16,9 +18,14 @@ public class FormatUtil{
 		return LocalDateTime.parse(date, formatter);
 	}
 	
-	public static String formatDouble(double number) {	
-		DecimalFormat df = new DecimalFormat("#.00");
-		return df.format(number);
+	public static String doubleToStringTwoDecimals(Double number) {
+		NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
+		DecimalFormat df = (DecimalFormat) nf;
+		try {
+			df.applyPattern("#.00");
+			return df.format(number);
+		} catch (Exception e) {
+			throw new NumberFormatException("Invalid number to format:" + number);
+		}
 	}
-	
 }

@@ -43,7 +43,7 @@ class ECommerceApplicationUnitaryTests {
 		assertThat(response.brandId, equalTo(1));
 		assertThat(response.getPrice_list(), equalTo(1));
 		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-14-10.00.00"));
-		assertThat(response.getFinalPrice(), equalTo("35,50EUR"));
+		assertThat(response.getFinalPrice(), equalTo("35.50EUR"));
 	}
 
 	@Test
@@ -63,7 +63,7 @@ class ECommerceApplicationUnitaryTests {
 		assertThat(response.brandId, equalTo(1));
 		assertThat(response.getPrice_list(), equalTo(2));
 		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-14-16.00.00"));
-		assertThat(response.getFinalPrice(), equalTo("25,45EUR"));
+		assertThat(response.getFinalPrice(), equalTo("25.45EUR"));
 	}
 	
 	@Test
@@ -83,7 +83,7 @@ class ECommerceApplicationUnitaryTests {
 		assertThat(response.brandId, equalTo(1));
 		assertThat(response.getPrice_list(), equalTo(1));
 		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-14-21.00.00"));
-		assertThat(response.getFinalPrice(), equalTo("35,50EUR"));
+		assertThat(response.getFinalPrice(), equalTo("35.50EUR"));
 	}
 	
 	@Test
@@ -103,7 +103,7 @@ class ECommerceApplicationUnitaryTests {
 		assertThat(response.brandId, equalTo(1));
 		assertThat(response.getPrice_list(), equalTo(3));
 		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-15-10.00.00"));
-		assertThat(response.getFinalPrice(), equalTo("30,50EUR"));
+		assertThat(response.getFinalPrice(), equalTo("30.50EUR"));
 	}
 	
 	@Test
@@ -123,7 +123,7 @@ class ECommerceApplicationUnitaryTests {
 		assertThat(response.brandId, equalTo(1));
 		assertThat(response.getPrice_list(), equalTo(4));
 		assertThat( FormatUtil.formatDateToString(response.getDate()), equalTo("2020-06-16-21.00.00"));
-		assertThat(response.getFinalPrice(), equalTo("38,95EUR"));
+		assertThat(response.getFinalPrice(), equalTo("38.95EUR"));
 	}
 
 	private List<Price> getAllPrices() {
