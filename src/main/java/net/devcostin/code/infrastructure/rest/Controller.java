@@ -19,7 +19,6 @@ public class Controller {
 	@Autowired
 	private SearchProductPriceUseCase priceUseCase;
 
-
 	@RequestMapping(path = "/prices", params = {"date","productId","brandId"}, method = RequestMethod.GET)
 	@ResponseStatus(code = HttpStatus.OK)
 	public SearchProductPriceResponse getPrice(@RequestParam("date") String date, @RequestParam("productId") int productId, @RequestParam("brandId") int brandId) {

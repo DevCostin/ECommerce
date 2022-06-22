@@ -4,6 +4,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import javax.annotation.PostConstruct;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +21,7 @@ class ECommerceApplicationIntegrationTests {
 
 	@Autowired
 	public TestRestTemplate restTemplate;
+	
 	
 	@Test
 	public void shouldWork() {		
