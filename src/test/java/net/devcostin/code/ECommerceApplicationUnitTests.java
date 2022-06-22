@@ -8,10 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.mockito.stubbing.Answer;
 
 import net.devcostin.code.aplication.searchProductPrice.SearchProductPriceRequest;
 import net.devcostin.code.aplication.searchProductPrice.SearchProductPriceResponse;
